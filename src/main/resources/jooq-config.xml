@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+  <!-- Configure the database connection here -->
+  <jdbc>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <url>jdbc:mysql://172.30.31.19:3306/test</url>
+    <user>root</user>
+    <password>123456</password>
+    
+    <!-- You can also pass user/password and other JDBC properties in the optional properties tag: -->
+    <properties>
+      <property><key>user</key><value>root</value></property>
+      <property><key>password</key><value>123456</value></property>
+    </properties>
+  </jdbc>
+  
+	<generator>
+			<!-- 代码生成器 -->
+			<name>org.jooq.util.JavaGenerator</name>
+			<database>
+				<!-- 数据库类型 -->
+				<name>org.jooq.util.mysql.MySQLDatabase</name>
+				<!-- 数据库名 -->
+				<inputSchema>test</inputSchema>
+				<!-- 生成包含，*表示包含所有内容 -->
+				<includes>.*</includes>
+				<!--剔除，此处未剔除 -->
+				<excludes></excludes>
+			</database>
+			<target>
+				<!-- 生成的代码所在的包结构 -->
+				<packageName>com.huaxia.generated</packageName>
+				<!-- 生成的代码存放路径，默认会以src同目录开始 -->
+				<directory>src/main/java/</directory>
+			</target>
+		</generator>						
+</configuration>
